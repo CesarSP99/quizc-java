@@ -40,7 +40,6 @@ public class QuestionUIMenu {
             if (validations.contains(validation)) {
                 continue;
             }
-
             System.out.printf("%d. %s" + System.lineSeparator(), validation.getCode(), validation.getName());
         }
         System.out.println("0. To exit");
