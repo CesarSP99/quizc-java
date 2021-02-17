@@ -42,8 +42,12 @@ public class Menu {
     }
 
     private void showQuiz() {
-        if (quiz == null || quizAnswers == null) {
-            System.out.println("No filled quiz available, you must create and fill a quiz");
+        if(quiz == null){
+            System.out.println("You must create and fill a quiz");
+            return;
+        }
+        if (quizAnswers == null) {
+            System.out.println("You must fill your quiz before you can see the answers");
             return;
         }
 
