@@ -12,6 +12,11 @@ public class Menu {
 
     public Menu() {
         this.quiz = null;
+        try{
+           this.quiz = Quiz.readJsonFile();
+        } catch (Exception e) {
+            System.out.println("Couldn't find a saved JSON quiz");
+        }
         this.quizAnswers = null;
     }
 
@@ -22,6 +27,7 @@ public class Menu {
         switch (option) {
             case '1':
                 quiz = QuizUIHandler.createQuiz();
+                quiz.writeJsonFile();
                 break;
             case '2':
                 fillQuiz();
