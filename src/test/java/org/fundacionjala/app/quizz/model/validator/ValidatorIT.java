@@ -18,4 +18,27 @@ public class ValidatorIT {
         Assert.assertEquals(DateValidator.class, dateValidator.getClass());
         Assert.assertTrue(errors.isEmpty());
     }
+
+    @Test
+    public void testOnlyUpperCaseValidator() {
+        List<String> errors = new ArrayList<>();
+        Validator onlyUpperCaseValidator = ValidatorType.ONLY_UPPERCASE.getValidator();
+
+        onlyUpperCaseValidator.validate("HOLA", null, errors);
+
+        Assert.assertEquals(OnlyUppercaseValidator.class, onlyUpperCaseValidator.getClass());
+        Assert.assertTrue(errors.isEmpty());
+    }
+
+    @Test
+    public void testMaxValidator() {
+        List<String> errors = new ArrayList<>();
+        Validator maxValidator = ValidatorType.MAX.getValidator();
+
+        maxValidator.validate("5", "7", errors);
+
+        Assert.assertEquals(MaxValidator.class, maxValidator.getClass());
+        Assert.assertTrue(errors.isEmpty());
+    }
+
 }
