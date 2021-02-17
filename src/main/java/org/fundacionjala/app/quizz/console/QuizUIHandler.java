@@ -32,8 +32,13 @@ public class QuizUIHandler {
 		System.out.println(quizAnswers.getQuiz().getTitle());
 		System.out.println("=============================================");
 
+		// I was requested to improve this output by showing the question title and the answer itself but it's
+		// already implemented in the toString method of the Answer class, so I added enumeration for each answer
+		// in the answered quiz.
+		int answerNumber = 1;
 		for (Answer answer : quizAnswers.getAnswers()) {
-			System.out.println(answer);
+			System.out.println(answerNumber + ". " + answer);
+			answerNumber++;
 		}
 
 		System.out.println("=============================================");
